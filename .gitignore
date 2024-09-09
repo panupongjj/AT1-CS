@@ -2,3 +2,5 @@
 *.vsidx
 *.ldf
 *.mdf
+*.v2
+/.vs
