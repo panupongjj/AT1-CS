@@ -24,16 +24,7 @@ namespace AT1_CS
             bool checkb_sub = true;
             int userInput_sub = 0;
 
-            //dpMain.displayMenu();
-            //dpStMenu.displayMenu();
-            //dpCalMenu.displayMenu();
-            //dpMegMenu.displayMenu();
-
             Database newDB = new Database();
-            //newDB.AddStudent();
-            //newDB.ViewStudentbyID();
-            //newDB.UpdateStudent();
-            //newDB.DeleteStudent();
 
             while (checke) {
                 string strPrint = "";
