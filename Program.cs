@@ -4,7 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+
+       
+            MainMenu dpMain = new MainMenu();
+            StudentMenu dpStMenu = new StudentMenu();
+            CalculationMenu dpCalMenu = new CalculationMenu();
+            MenagementMenu dpMegMenu = new MenagementMenu();
+            
+            dpMain.displayMenu();
+            dpStMenu.displayMenu();
+            dpCalMenu.displayMenu();
+            dpMegMenu.displayMenu();
+
+
         }
     }
 }

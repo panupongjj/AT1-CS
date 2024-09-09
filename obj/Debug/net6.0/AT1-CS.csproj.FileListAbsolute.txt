@@ -1,0 +1,15 @@
+C:\JJ_CER4_PGM\GIT\AT1-CS\bin\Debug\net6.0\AT1-CS.exe
+C:\JJ_CER4_PGM\GIT\AT1-CS\bin\Debug\net6.0\AT1-CS.deps.json
+C:\JJ_CER4_PGM\GIT\AT1-CS\bin\Debug\net6.0\AT1-CS.runtimeconfig.json
+C:\JJ_CER4_PGM\GIT\AT1-CS\bin\Debug\net6.0\AT1-CS.dll
+C:\JJ_CER4_PGM\GIT\AT1-CS\bin\Debug\net6.0\AT1-CS.pdb
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.GeneratedMSBuildEditorConfig.editorconfig
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.AssemblyInfoInputs.cache
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.AssemblyInfo.cs
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.csproj.CoreCompileInputs.cache
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.sourcelink.json
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.dll
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\refint\AT1-CS.dll
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.pdb
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\AT1-CS.genruntimeconfig.cache
+C:\JJ_CER4_PGM\GIT\AT1-CS\obj\Debug\net6.0\ref\AT1-CS.dll
