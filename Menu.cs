@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace AT1_CS
 {
@@ -18,6 +14,7 @@ namespace AT1_CS
     {
         public override void displayMenu()
         {
+            Console.Clear();
             Console.WriteLine("###################################################################");
             Console.WriteLine("################### Students Management System ####################");
             Console.WriteLine("###################################################################");
@@ -34,6 +31,7 @@ namespace AT1_CS
     {
         public override void displayMenu()
         {
+            Console.Clear();
             Console.WriteLine("###################################################################");
             Console.WriteLine("################## Display Students Data System ###################");
             Console.WriteLine("###################################################################");
@@ -50,6 +48,7 @@ namespace AT1_CS
     {
         public override void displayMenu()
         {
+            Console.Clear();
             Console.WriteLine("###################################################################");
             Console.WriteLine("####################### Calculation System ########################");
             Console.WriteLine("###################################################################");
@@ -68,6 +67,7 @@ namespace AT1_CS
     {
         public override void displayMenu()
         {
+            Console.Clear();
             Console.WriteLine("###################################################################");
             Console.WriteLine("####################### Management system #########################");
             Console.WriteLine("###################################################################");

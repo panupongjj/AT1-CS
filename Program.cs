@@ -17,6 +17,10 @@
             dpCalMenu.displayMenu();
             dpMegMenu.displayMenu();
 
+            Database newDB = new Database();
+            //newDB.AddStudent();
+            newDB.ViewStudent();
+            newDB.UpdateStudent();
 
         }
     }

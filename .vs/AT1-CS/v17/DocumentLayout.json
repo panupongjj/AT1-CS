@@ -3,12 +3,23 @@
   "WorkspaceRootPath": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_cer4_pgm\\git\\at1-cs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_cer4_pgm\\git\\at1-cs\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_cer4_pgm\\git\\at1-cs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_cer4_pgm\\git\\at1-cs\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_cer4_pgm\\git\\at1-cs\\generalmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:generalmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AT1_CS_DB/True/SqlTable/dbo.studentTB.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +29,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 386,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "dbo.studentTB [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/AT1_CS_DB/True/SqlTable/dbo.studentTB.sql",
+              "ToolTip": "dbo.studentTB [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-09T04:19:52.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GeneralMethod.cs",
+              "DocumentMoniker": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\GeneralMethod.cs",
+              "RelativeDocumentMoniker": "GeneralMethod.cs",
+              "ToolTip": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\GeneralMethod.cs",
+              "RelativeToolTip": "GeneralMethod.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAiwFsAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T03:53:32.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\Database.cs",
+              "RelativeDocumentMoniker": "Database.cs",
+              "ToolTip": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\Database.cs",
+              "RelativeToolTip": "Database.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAqwFsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-09T00:50:39.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\Menu.cs",
               "RelativeDocumentMoniker": "Menu.cs",
-              "ToolTip": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\Menu.cs*",
-              "RelativeToolTip": "Menu.cs*",
-              "ViewState": "AQIAACIAAAAAAAAAAAAAwFEAAAAAAAAA",
+              "ToolTip": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAkwCkAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-08T23:47:46.459Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-08T23:29:58.446Z",
               "EditorCaption": ""
