@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AT1_CS
-build_property.ProjectDir = C:\JJ_CER4_PGM\GIT\AT1-CS\
+build_property.ProjectDir = C:\JJ_CERIV_PGM\GIT\AT1-CS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

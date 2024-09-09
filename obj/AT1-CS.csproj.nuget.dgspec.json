@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\AT1-CS.csproj": {}
+    "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\AT1-CS.csproj": {}
   },
   "projects": {
-    "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\AT1-CS.csproj": {
+    "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\AT1-CS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\AT1-CS.csproj",
+        "projectUniqueName": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\AT1-CS.csproj",
         "projectName": "AT1-CS",
-        "projectPath": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\AT1-CS.csproj",
-        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\JJ_CER4_PGM\\GIT\\AT1-CS\\obj\\",
+        "projectPath": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\AT1-CS.csproj",
+        "packagesPath": "C:\\Users\\ASUS TUF\\.nuget\\packages\\",
+        "outputPath": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

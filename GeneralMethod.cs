@@ -19,7 +19,8 @@ namespace AT1_CS
 
             while (check)
             {
-                Console.Write(strPrint);
+                //Console.Clear();
+                Console.Write("\n"+strPrint);
                 userInput = Console.ReadLine();
                 isNumerical = float.TryParse(userInput, out outputNumber);
                 // Use Revers logic if the user input can convert to int or float that mean is not string
@@ -37,8 +38,9 @@ namespace AT1_CS
             int outputNumber;
 
             while (check)
-            {
-                Console.Write(strPrint);
+            {   
+                //Console.Clear();
+                Console.Write("\n" + strPrint);
                 userInput = Console.ReadLine();
                 isNumerical = int.TryParse(userInput, out outputNumber);
                 // user input have to be a number and this method will return string(number)
@@ -56,7 +58,8 @@ namespace AT1_CS
             DateTime dDate;
             while (check)
             {
-                Console.Write(strPrint);
+                //Console.Clear();
+                Console.Write("\n" + strPrint);
                 userInput = Console.ReadLine();
                 isDate = DateTime.TryParse(userInput, out dDate);
                 if (isDate)
@@ -78,12 +81,13 @@ namespace AT1_CS
 
             while (check)
             {
-                Console.Write(strPrint);
+                //Console.Clear();
+                Console.Write("\n" + strPrint);
                 userInput = Console.ReadLine();
                 isNumerical = float.TryParse(userInput, out outputNumber);
                 if (isNumerical) { check = false; }
             }
-            return outputNumber;
+            return (float)System.Math.Round(outputNumber,2) ;
         }
         public int inputIntChecker(string strPrint)
         {
@@ -94,8 +98,9 @@ namespace AT1_CS
             int outputNumber = 0;
 
             while (check)
-            {
-                Console.Write(strPrint);
+            {   
+                //Console.Clear();
+                Console.Write("\n" + strPrint);
                 userInput = Console.ReadLine();
                 isNumerical = int.TryParse(userInput, out outputNumber);
                 if (isNumerical) { check = false; }

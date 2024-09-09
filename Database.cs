@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Xml.Linq;
 using System.Numerics;
 using Microsoft.VisualBasic;
+using static System.Net.Mime.MediaTypeNames;
+using System.Collections.Concurrent;
 
 
 namespace AT1_CS
@@ -13,6 +15,8 @@ namespace AT1_CS
     {
         public SqlConnection cnn;
         public string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AT1_CS_DB;Integrated Security=True;";
+        //public string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AT1_CS_DB;Integrated Security=True;";
+        
         public GeneralMethod gnMt = new GeneralMethod();
 
         // Creating a new student to the database
@@ -60,7 +64,6 @@ namespace AT1_CS
 
             strPrint = "Enter student TotalScore: ";
             float TotalScore = gnMt.inputScoreChecker(strPrint);
-
             cnn = new SqlConnection(connectionString);
             cnn.Open();
 
@@ -92,10 +95,7 @@ namespace AT1_CS
         public void UpdateStudent()
         {
             string strPrint = "";
-
-            strPrint = ("Enter the student ID to update: ");
-            int studentId = gnMt.inputIntChecker(strPrint);
-            viewStudentbyID(studentId);
+            int StudentId = ViewStudentbyID("UPDATE");
 
             strPrint = "Enter student FullName: ";
             string FullName = gnMt.inputStringChecker(strPrint);
@@ -126,6 +126,7 @@ namespace AT1_CS
                 "WHERE StudentId = @StudentId";
             
             SqlCommand command = new SqlCommand(updateQuery, cnn);
+            command.Parameters.AddWithValue("@StudentId", StudentId);
             command.Parameters.AddWithValue("@FullName", FullName);
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Email", Email);
@@ -143,13 +144,17 @@ namespace AT1_CS
             cnn.Close();
             
         }
-        public void viewStudentbyID(int StudentId)
+        public int ViewStudentbyID(string msg)
         {
+            string strPrint = "";
 
+            strPrint = ("Enter the student ID for "+msg+": ");
+            int StudentId = gnMt.inputIntChecker(strPrint);
             cnn = new SqlConnection(connectionString);
             cnn.Open();
-            string selectQuery = "SELECT * FROM StudentTB  StudentId = @StudentId";
+            string selectQuery = "SELECT * FROM StudentTB WHERE StudentId = @StudentId";
             SqlCommand commandR = new SqlCommand(selectQuery, cnn);
+            commandR.Parameters.AddWithValue("@StudentId", StudentId);
             SqlDataReader reader = commandR.ExecuteReader();
 
             Console.WriteLine("\nStudents:");
@@ -158,24 +163,109 @@ namespace AT1_CS
             Console.WriteLine("-------------------------");
             while (reader.Read())
             {
-                if (reader.Read())
-                {
-                    Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {reader["DoB"]}, {reader["EnrolmentDate"]}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
-                }
-                else {
-                    Console.WriteLine("\nNo Student found with the given Id.");
-                }
+                Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {reader["DoB"]}, {reader["EnrolmentDate"]}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
+            }
+            reader.Close();
+            cnn.Close();
+
+            return StudentId;
+
+        }
+        public void DeleteStudent() {
+
+            int StudentId = ViewStudentbyID("DELETE");
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string deleteQuery = "DELETE FROM StudentTB WHERE StudentId = @StudentId";
+            SqlCommand command = new SqlCommand(deleteQuery, cnn);
+            command.Parameters.AddWithValue("@StudentId", StudentId);
+
+            int rowsAffected = command.ExecuteNonQuery();
+            if (rowsAffected > 0)
+            {
+                Console.WriteLine("\nStudent deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine("\nEmployee not found.");
+            }
+            cnn.Close();
+        }
+
+        public void AvgOfTotalScore()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string selectQuery = "SELECT CAST(AVG(TotalScore) as decimal(10,2)) as avgTotal FROM StudentTB";
+            SqlCommand commandR = new SqlCommand(selectQuery, cnn);
+            SqlDataReader reader = commandR.ExecuteReader();
+
+            Console.WriteLine("\nAverage Of Total Scores :");
+            Console.WriteLine("---------------------------");
+           
+            while (reader.Read())
+            {
+                //Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {reader["DoB"]}, {reader["EnrolmentDate"]}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
+                Console.WriteLine($"{reader["avgTotal"]}");
             }
             reader.Close();
             cnn.Close();
         }
-        public void DeleteStudent() {
-            
+        public void MinMaxOfTotalScore()
+        {
             cnn = new SqlConnection(connectionString);
             cnn.Open();
+            string selectQuery = "SELECT CAST(MAX(TotalScore) as decimal(10, 2)) as maxTotal," +
+                " CAST(MIN(TotalScore) as decimal(10, 2)) as mixTotal " +
+                " FROM StudentTB";
+            SqlCommand commandR = new SqlCommand(selectQuery, cnn);
+            SqlDataReader reader = commandR.ExecuteReader();
+
+            Console.WriteLine("\nHigh And Low Of Total Scores :");
+            Console.WriteLine("---------------------------");
+
+            while (reader.Read())
+            {
+                //Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {reader["DoB"]}, {reader["EnrolmentDate"]}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
+                Console.WriteLine($"High Scores: {reader["maxTotal"]}");
+                Console.WriteLine($"Low Scores: {reader["mixTotal"]}");
+            }
+            reader.Close();
+            cnn.Close();
+        }
+        public void StudentAges()
+        {
+            string strPrint = "";
+
+            //strPrint = ("Enter the student ID for " + msg + ": ");
+            //int StudentId = gnMt.inputIntChecker(strPrint);
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string selectQuery = "SELECT StudentId,FullName,DoB FROM StudentTB";
+            SqlCommand commandR = new SqlCommand(selectQuery, cnn);
+            SqlDataReader reader = commandR.ExecuteReader();
+
+            Console.WriteLine("\nStudents:");
+            Console.WriteLine("---------");
+            Console.WriteLine("Student ID, Student Name,Date of birth, Age");
+            Console.WriteLine("-------------------------");
+            while (reader.Read())
+            {
+                int age = CalAge(""+(reader["DoB"]));
+
+                Console.WriteLine($"{reader["StudentId"]} {reader["FullName"]}, {reader["DoB"]}, {age}");
+            }
+            reader.Close();
+            cnn.Close();
 
         }
-
-
+        static int CalAge(string DoB) {
+            System.DateTime moment = System.DateTime.Now;
+            int currentYear = moment.Year;
+            string[] subs = DoB.Split('/');
+            int studentYear = Int32.Parse(subs[2]);
+    
+            return currentYear- studentYear;
+        }
     }
 }
