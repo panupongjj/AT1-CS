@@ -11,19 +11,17 @@ using System.Collections.Concurrent;
 
 namespace AT1_CS
 {
+    // Database class created for storing the method that dealing with database
     class Database
     {
         SqlConnection cnn = new SqlConnection();
         GeneralMethod gnMt = new GeneralMethod();
         string connectionString;
         string tagetTable;
-
         public Database(String tagetTable, string connectionString) { 
             this.tagetTable = tagetTable;
             this.connectionString = connectionString;
         }
-
-        // Creating a new student to the database
         public void ViewStudent()
         {
             cnn = new SqlConnection(this.connectionString);
@@ -45,7 +43,6 @@ namespace AT1_CS
             reader.Close();
             cnn.Close();
         }
-
         public void AddStudent()
         {
             string strPrint = "";
@@ -70,6 +67,7 @@ namespace AT1_CS
 
             strPrint = "Enter student TotalScore: ";
             float TotalScore = gnMt.inputScoreChecker(strPrint);
+            
             cnn = new SqlConnection(this.connectionString);
             cnn.Open();
 
@@ -88,14 +86,13 @@ namespace AT1_CS
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
-                Console.WriteLine("Student added successfully.");
+                Console.WriteLine("\n Student added successfully.");
             else
                 Console.WriteLine("Failed to add student.");
 
             cnn.Close();
 
         }
-
         public void UpdateStudent()
         {
             string strPrint = "";
@@ -197,7 +194,6 @@ namespace AT1_CS
             }
             cnn.Close();
         }
-
         public void AvgOfTotalScore()
         {
             cnn = new SqlConnection(this.connectionString);
@@ -264,7 +260,6 @@ namespace AT1_CS
             }
             reader.Close();
             cnn.Close();
-
         }
         static int CalAge(string DoB) {
             System.DateTime moment = System.DateTime.Now;
@@ -284,6 +279,7 @@ namespace AT1_CS
         }
     }
 }
+
 //CREATE TABLE[dbo].[StudentTB] (
 //    [StudentId]     INT IDENTITY(1, 1) NOT NULL,
 //    [FullName]      NVARCHAR (50)   NOT NULL,

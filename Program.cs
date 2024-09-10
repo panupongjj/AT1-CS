@@ -2,9 +2,13 @@
 using System.Runtime.InteropServices;
 
 namespace AT1_CS
-{
+{   
+    // This is the main of the system created for control working flow of the program 
     internal class Program
-    {
+    {   
+        public Program() { 
+
+        }
         static void Main(string[] args)
         {
             //Display Class pass Parameter for display ( Symbol , MenuName)
@@ -28,15 +32,16 @@ namespace AT1_CS
 
             while (checke) {
                 string strPrint = "";
+                //Display Students Management System
                 dpMain.displayMenu();
                 strPrint = ("Enter the select number: ");
                 int userInput = gnMt.inputIntChecker(strPrint);
                 switch (userInput) {
                     case 1:
+                        //Display Students Data System
                         checkb_sub = true;
                         while (checkb_sub)
                         {
-                            //Console.ReadLine();
                             Console.Clear();
                             dpStMenu.displayMenu();
                             strPrint = ("Enter the select number: ");
@@ -67,10 +72,10 @@ namespace AT1_CS
                         break;
 
                     case 2:
+                        //Display Calculation System
                         checkb_sub = true;
                         while (checkb_sub)
                         {
-                            //Console.ReadLine();
                             Console.Clear();
                             dpCalMenu.displayMenu();
                             strPrint = ("Enter the select number: ");
@@ -107,10 +112,10 @@ namespace AT1_CS
                     
                     
                     case 3:
+                        //Display Management system
                         checkb_sub = true;
                         while (checkb_sub)
                         {
-                            //Console.ReadLine();
                             Console.Clear();
                             dpMegMenu.displayMenu();
                             strPrint = ("Enter the select number: ");
@@ -158,14 +163,8 @@ namespace AT1_CS
                         break;
 
                 }
-                  
-
-
 
             }
-            
-
-
         }
     }
 }

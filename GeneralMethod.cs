@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AT1_CS
 {
+    // GeneralMethod Class ate store of the method that could be used multiple time
     class GeneralMethod
     {
         public GeneralMethod() { }
@@ -30,7 +31,6 @@ namespace AT1_CS
             }
             return userInput;
         }
-
         public int inputPhoneChecker(string strPrint)
         {
             bool check = true;
@@ -50,7 +50,6 @@ namespace AT1_CS
 
             return outputNumber;
         }
-
         public string inputDateChecker(string strPrint)
         {
             bool check = true;

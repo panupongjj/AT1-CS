@@ -2,15 +2,22 @@
 
 namespace AT1_CS
 {
+    // Display class for display different menu based on user selection
+    // Parent class will be overried by child class on displayMenu()
     class Display
     {
-        public Display() { }
+        public Display() {
+        
+        }
         public virtual void displayMenu()
         {
             Console.WriteLine("Students management system");
         }
 
     }
+
+    // MainMenu class for display the main menu option of the program 
+    // inherited from Display and Override displayMenu() method
     class MainMenu : Display
     {
         string manuName;
@@ -37,6 +44,8 @@ namespace AT1_CS
         }
 
     }
+    // StudentMenu class for display the student menu option of the program
+    // inherited from Display and Override displayMenu() method
     class StudentMenu : Display
     {
         string manuName;
@@ -65,6 +74,8 @@ namespace AT1_CS
         }
 
     }
+    // CalculationMenu class for display the claculation menu option of the program
+    // inherited from Display and Override displayMenu() method
     class CalculationMenu : Display
     {
         string manuName;
@@ -95,6 +106,8 @@ namespace AT1_CS
         }
 
     }
+    // MenagementMenu class for display the menagement menu option of the program
+    // inherited from Display and Override displayMenu() method
     class MenagementMenu : Display
     {
         string manuName;
