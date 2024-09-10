@@ -34,7 +34,9 @@ namespace AT1_CS
             Console.WriteLine("-------------------------");
             while (reader.Read())
             {
-                Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {reader["DoB"]}, {reader["EnrolmentDate"]}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
+                string readerDob = GetDateWithOutTime("" + reader["DoB"]);
+                string readerEnroDate = GetDateWithOutTime("" + reader["EnrolmentDate"]);
+                Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {readerDob}, {readerEnroDate}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
             }
             reader.Close();
             cnn.Close();
@@ -71,16 +73,15 @@ namespace AT1_CS
             string insertquery = "INSERT INTO " +
                 "studentTB (FullName, Phone, Email, DoB, EnrolmentDate, EnrolmentCert, TotalScore) " +
                 "VALUES (@FullName, @Phone, @Email, @DoB, @EnrolmentDate, @EnrolmentCert, @TotalScore) ";
-
             SqlCommand command = new SqlCommand(insertquery, cnn);
             command.Parameters.AddWithValue("@FullName", FullName);
             command.Parameters.AddWithValue("@Phone", Phone);
             command.Parameters.AddWithValue("@Email", Email);
-            command.Parameters.AddWithValue("@DoB", DoB);
+            command.Parameters.AddWithValue("@DoB", DoB );
             command.Parameters.AddWithValue("@EnrolmentDate", EnrolmentDate);
             command.Parameters.AddWithValue("@EnrolmentCert", EnrolmentCert);
             command.Parameters.AddWithValue("@TotalScore", TotalScore);
-
+            Console.WriteLine(insertquery);
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
@@ -163,7 +164,9 @@ namespace AT1_CS
             Console.WriteLine("-------------------------");
             while (reader.Read())
             {
-                Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {reader["DoB"]}, {reader["EnrolmentDate"]}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
+                string readerDob = GetDateWithOutTime("" + reader["DoB"]);
+                string readerEnroDate = GetDateWithOutTime("" + reader["EnrolmentDate"]);
+                Console.WriteLine($"{reader["StudentId"]}, {reader["FullName"]}, {reader["Phone"]}, {reader["Email"]}, {readerDob}, {readerEnroDate}, {reader["EnrolmentCert"]}, {reader["TotalScore"]}");
             }
             reader.Close();
             cnn.Close();
@@ -251,9 +254,10 @@ namespace AT1_CS
             Console.WriteLine("-------------------------");
             while (reader.Read())
             {
-                int age = CalAge(""+(reader["DoB"]));
+                string readerDob = GetDateWithOutTime(""+reader["DoB"]);
+                int age = CalAge(readerDob);
 
-                Console.WriteLine($"{reader["StudentId"]} {reader["FullName"]}, {reader["DoB"]}, {age}");
+                Console.WriteLine($"{reader["StudentId"]} {reader["FullName"]}, {readerDob}, {age}");
             }
             reader.Close();
             cnn.Close();
@@ -262,10 +266,29 @@ namespace AT1_CS
         static int CalAge(string DoB) {
             System.DateTime moment = System.DateTime.Now;
             int currentYear = moment.Year;
+            
             string[] subs = DoB.Split('/');
             int studentYear = Int32.Parse(subs[2]);
     
             return currentYear- studentYear;
         }
+        static string GetDateWithOutTime(string date)
+        {
+            // Data from database was returened in {dd/mm/yyyy 00:00:00:} format
+            // Need Just dd/mm/yyyy format to display and calculation
+            string[] subs = date.Split(' ');
+            return subs[0];
+        }
     }
 }
+//CREATE TABLE[dbo].[StudentTB] (
+//    [StudentId]     INT IDENTITY(1, 1) NOT NULL,
+//    [FullName]      NVARCHAR (50)   NOT NULL,
+//    [Phone]         INT             NOT NULL,
+//    [Email]         NVARCHAR (50)   NOT NULL,
+//    [DoB]           DATE            NOT NULL,
+//    [EnrolmentDate] DATE            NOT NULL,
+//    [EnrolmentCert] NVARCHAR (50)   NOT NULL,
+//    [TotalScore]    DECIMAL (10, 2) NOT NULL,
+//    PRIMARY KEY CLUSTERED ([StudentId] ASC)
+//);

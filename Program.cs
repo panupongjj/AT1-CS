@@ -45,12 +45,12 @@ namespace AT1_CS
                             {
                                 case 1:
                                     db.ViewStudent();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 2:
                                     db.ViewStudentbyID("VIEW");
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 9:
@@ -79,17 +79,17 @@ namespace AT1_CS
                             {
                                 case 1:
                                     db.AvgOfTotalScore();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 2:
                                     db.MinMaxOfTotalScore();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 3:
                                     db.StudentAges();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 9:
@@ -119,22 +119,22 @@ namespace AT1_CS
                             {
                                 case 1:
                                     db.AddStudent();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 2:
                                     db.UpdateStudent();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 3:
                                     db.DeleteStudent();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 4:
                                     db.ViewStudent();
-                                    Console.WriteLine("\nPress any key to continue . . . .");
+                                    Console.WriteLine("\nPress enter to continue . . . .");
                                     Console.ReadLine();
                                     break;
                                 case 9:

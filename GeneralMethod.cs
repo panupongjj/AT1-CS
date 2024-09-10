@@ -64,7 +64,10 @@ namespace AT1_CS
                 isDate = DateTime.TryParse(userInput, out dDate);
                 if (isDate)
                 {
-                    userInput = String.Format("{0:d/MM/yyyy}", dDate);
+                    userInput = String.Format("{0:d-MM-yyyy}", dDate);
+                    string[] subs = userInput.Split('-');
+                    //Conver dd-mm-yyyy to yyyy-mm-dd for database input format
+                    userInput = String.Join("-", subs[2], subs[1], subs[0]);
                     check = false;
                 }
             }
