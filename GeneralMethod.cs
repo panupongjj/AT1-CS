@@ -8,7 +8,7 @@ namespace AT1_CS
 {
     class GeneralMethod
     {
-
+        public GeneralMethod() { }
         public string inputStringChecker(string strPrint)
         {
 
@@ -23,19 +23,20 @@ namespace AT1_CS
                 Console.Write("\n"+strPrint);
                 userInput = Console.ReadLine();
                 isNumerical = float.TryParse(userInput, out outputNumber);
-                // Use Revers logic if the user input can convert to int or float that mean is not string
+                // Use Revers logic if the userInput can convert to int or float that mean is not string
+                // if not a string will reques user to input it again
                 if (!isNumerical) { check = false; }
 
             }
             return userInput;
         }
 
-        public string inputPhoneChecker(string strPrint)
+        public int inputPhoneChecker(string strPrint)
         {
             bool check = true;
             bool isNumerical;
             string userInput = "";
-            int outputNumber;
+            int outputNumber = 0;
 
             while (check)
             {   
@@ -43,11 +44,11 @@ namespace AT1_CS
                 Console.Write("\n" + strPrint);
                 userInput = Console.ReadLine();
                 isNumerical = int.TryParse(userInput, out outputNumber);
-                // user input have to be a number and this method will return string(number)
+                // userInput have to be a number if not will reques user to input it again
                 if (isNumerical) { check = false; }
             }
 
-            return userInput;
+            return outputNumber;
         }
 
         public string inputDateChecker(string strPrint)
@@ -61,7 +62,10 @@ namespace AT1_CS
                 //Console.Clear();
                 Console.Write("\n" + strPrint);
                 userInput = Console.ReadLine();
+                // try to convert userInput to any date format 
+                // if not a date format will reques user to input it again
                 isDate = DateTime.TryParse(userInput, out dDate);
+                
                 if (isDate)
                 {
                     userInput = String.Format("{0:d-MM-yyyy}", dDate);
@@ -88,6 +92,7 @@ namespace AT1_CS
                 Console.Write("\n" + strPrint);
                 userInput = Console.ReadLine();
                 isNumerical = float.TryParse(userInput, out outputNumber);
+                // userInput have to be a number if not will reques user to input it again
                 if (isNumerical) { check = false; }
             }
             return (float)System.Math.Round(outputNumber,2) ;

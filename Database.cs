@@ -13,18 +13,22 @@ namespace AT1_CS
 {
     class Database
     {
-        public SqlConnection cnn;
-        public string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AT1_CS_DB;Integrated Security=True;";
-        //public string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AT1_CS_DB;Integrated Security=True;";
-        
-        public GeneralMethod gnMt = new GeneralMethod();
+        SqlConnection cnn = new SqlConnection();
+        GeneralMethod gnMt = new GeneralMethod();
+        string connectionString;
+        string tagetTable;
+
+        public Database(String tagetTable, string connectionString) { 
+            this.tagetTable = tagetTable;
+            this.connectionString = connectionString;
+        }
 
         // Creating a new student to the database
         public void ViewStudent()
         {
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
-            string selectQuery = "SELECT * FROM StudentTB";
+            string selectQuery = $"SELECT * FROM {this.tagetTable}";
             SqlCommand commandR = new SqlCommand(selectQuery, cnn);
             SqlDataReader reader = commandR.ExecuteReader();
 
@@ -50,7 +54,7 @@ namespace AT1_CS
             string FullName = gnMt.inputStringChecker(strPrint);
 
             strPrint = "Enter student Phone: ";
-            string Phone = gnMt.inputPhoneChecker(strPrint);
+            int Phone = gnMt.inputPhoneChecker(strPrint);
 
             strPrint = "Enter student Email: ";
             string Email = gnMt.inputStringChecker(strPrint);
@@ -66,12 +70,12 @@ namespace AT1_CS
 
             strPrint = "Enter student TotalScore: ";
             float TotalScore = gnMt.inputScoreChecker(strPrint);
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
 
             // INSERT INT *tablename (col1, col2, ... ) VALUES (val1, val2, ...)
             string insertquery = "INSERT INTO " +
-                "studentTB (FullName, Phone, Email, DoB, EnrolmentDate, EnrolmentCert, TotalScore) " +
+                $"{this.tagetTable} (FullName, Phone, Email, DoB, EnrolmentDate, EnrolmentCert, TotalScore) " +
                 "VALUES (@FullName, @Phone, @Email, @DoB, @EnrolmentDate, @EnrolmentCert, @TotalScore) ";
             SqlCommand command = new SqlCommand(insertquery, cnn);
             command.Parameters.AddWithValue("@FullName", FullName);
@@ -81,7 +85,6 @@ namespace AT1_CS
             command.Parameters.AddWithValue("@EnrolmentDate", EnrolmentDate);
             command.Parameters.AddWithValue("@EnrolmentCert", EnrolmentCert);
             command.Parameters.AddWithValue("@TotalScore", TotalScore);
-            Console.WriteLine(insertquery);
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
@@ -102,7 +105,7 @@ namespace AT1_CS
             string FullName = gnMt.inputStringChecker(strPrint);
 
             strPrint = "Enter student Phone: ";
-            string Phone = gnMt.inputPhoneChecker(strPrint);
+            int Phone = gnMt.inputPhoneChecker(strPrint);
 
             strPrint = "Enter student Email: ";
             string Email = gnMt.inputStringChecker(strPrint);
@@ -119,10 +122,10 @@ namespace AT1_CS
             strPrint = "Enter student TotalScore: ";
             float TotalScore = gnMt.inputScoreChecker(strPrint);
 
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
 
-            string updateQuery = "UPDATE studentTB SET " +
+            string updateQuery = $"UPDATE {this.tagetTable} SET " +
                 "FullName = @FullName, Phone = @Phone, Email = @Email, DoB = @DoB, EnrolmentDate = @EnrolmentDate, EnrolmentCert = @EnrolmentCert, TotalScore = @TotalScore " +
                 "WHERE StudentId = @StudentId";
             
@@ -151,9 +154,9 @@ namespace AT1_CS
 
             strPrint = ("Enter the student ID for "+msg+": ");
             int StudentId = gnMt.inputIntChecker(strPrint);
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
-            string selectQuery = "SELECT * FROM StudentTB WHERE StudentId = @StudentId";
+            string selectQuery = $"SELECT * FROM {this.tagetTable} WHERE StudentId = @StudentId";
             SqlCommand commandR = new SqlCommand(selectQuery, cnn);
             commandR.Parameters.AddWithValue("@StudentId", StudentId);
             SqlDataReader reader = commandR.ExecuteReader();
@@ -177,9 +180,9 @@ namespace AT1_CS
         public void DeleteStudent() {
 
             int StudentId = ViewStudentbyID("DELETE");
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
-            string deleteQuery = "DELETE FROM StudentTB WHERE StudentId = @StudentId";
+            string deleteQuery = $"DELETE FROM {this.tagetTable} WHERE StudentId = @StudentId";
             SqlCommand command = new SqlCommand(deleteQuery, cnn);
             command.Parameters.AddWithValue("@StudentId", StudentId);
 
@@ -197,9 +200,9 @@ namespace AT1_CS
 
         public void AvgOfTotalScore()
         {
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
-            string selectQuery = "SELECT CAST(AVG(TotalScore) as decimal(10,2)) as avgTotal FROM StudentTB";
+            string selectQuery = $"SELECT CAST(AVG(TotalScore) as decimal(10,2)) as avgTotal FROM {this.tagetTable}";
             SqlCommand commandR = new SqlCommand(selectQuery, cnn);
             SqlDataReader reader = commandR.ExecuteReader();
 
@@ -216,11 +219,11 @@ namespace AT1_CS
         }
         public void MinMaxOfTotalScore()
         {
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
             string selectQuery = "SELECT CAST(MAX(TotalScore) as decimal(10, 2)) as maxTotal," +
                 " CAST(MIN(TotalScore) as decimal(10, 2)) as mixTotal " +
-                " FROM StudentTB";
+                $" FROM {this.tagetTable}";
             SqlCommand commandR = new SqlCommand(selectQuery, cnn);
             SqlDataReader reader = commandR.ExecuteReader();
 
@@ -242,9 +245,9 @@ namespace AT1_CS
 
             //strPrint = ("Enter the student ID for " + msg + ": ");
             //int StudentId = gnMt.inputIntChecker(strPrint);
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(this.connectionString);
             cnn.Open();
-            string selectQuery = "SELECT StudentId,FullName,DoB FROM StudentTB";
+            string selectQuery = $"SELECT StudentId,FullName,DoB FROM {this.tagetTable}";
             SqlCommand commandR = new SqlCommand(selectQuery, cnn);
             SqlDataReader reader = commandR.ExecuteReader();
 

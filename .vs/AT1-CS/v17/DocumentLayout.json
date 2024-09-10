@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_ceriv_pgm\\git\\at1-cs\\generalmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:generalmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_ceriv_pgm\\git\\at1-cs\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_ceriv_pgm\\git\\at1-cs\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|c:\\jj_ceriv_pgm\\git\\at1-cs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D63BD67-9ED5-454F-BA58-190E754D4ED1}|AT1-CS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,17 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 272,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\Database.cs",
+              "RelativeDocumentMoniker": "Database.cs",
+              "ToolTip": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\Database.cs",
+              "RelativeToolTip": "Database.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowEAAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T04:58:04.311Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GeneralMethod.cs",
+              "DocumentMoniker": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\GeneralMethod.cs",
+              "RelativeDocumentMoniker": "GeneralMethod.cs",
+              "ToolTip": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\GeneralMethod.cs",
+              "RelativeToolTip": "GeneralMethod.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T04:58:13.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\Menu.cs",
+              "RelativeDocumentMoniker": "Menu.cs",
+              "ToolTip": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAmwHkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T04:57:00.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\JJ_CERIV_PGM\\GIT\\AT1-CS\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAgwCUAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T09:27:24.416Z",
               "EditorCaption": ""

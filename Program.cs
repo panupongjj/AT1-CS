@@ -7,24 +7,24 @@ namespace AT1_CS
     {
         static void Main(string[] args)
         {
-            //Display Class 
-            MainMenu dpMain = new MainMenu();
-            StudentMenu dpStMenu = new StudentMenu();
-            CalculationMenu dpCalMenu = new CalculationMenu();
-            MenagementMenu dpMegMenu = new MenagementMenu();
+            //Display Class pass Parameter for display ( Symbol , MenuName)
+            MainMenu        dpMain      = new MainMenu("+", "Students Management System");
+            StudentMenu     dpStMenu    = new StudentMenu("-", "Display Students Data System");
+            CalculationMenu dpCalMenu   = new CalculationMenu("*", "Calculation System");
+            MenagementMenu  dpMegMenu   = new MenagementMenu("/", "Management system");
             
             //General Class
             GeneralMethod gnMt = new GeneralMethod();
-            
+
             //Database class
-            Database db = new Database();
+            string connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AT1_CS_DB;Integrated Security=True;";
+            string tagetTable = "StudentTB";
+            Database db = new Database(tagetTable, connection);
 
-
+            //Control flow valiable
             bool checke = true;
             bool checkb_sub = true;
             int userInput_sub = 0;
-
-            Database newDB = new Database();
 
             while (checke) {
                 string strPrint = "";
